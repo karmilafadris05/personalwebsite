@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Experience - index</title>
+
+    <style>
+    body {
+        margin: 0;
+        font-family: "Georgia", serif;
+
+        background-image: url("background2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        color: #3d3d3d;
+    }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: normal;
+            margin-bottom: 50px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: #d8c8b5;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+
+        .experience {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .experience::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            right: -9px;
+            background-color: white;
+            border: 3px solid #d8c8b5;
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -9px;
+        }
+
+        .content {
+            padding: 20px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            text-decoration: none;
+            color: #4a4a4a;
+        }
+
+        .back-btn:hover {
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>My Life Experience</h1>
+
+    <div class="timeline">
+
+        <div class="experience left">
+            <div class="content">
+                <h3>2023</h3>
+                <p>March - May
+                : A Full-Time cashier at AEON Bukit Tinggi, Klang, Selangor.</p>
+                <p>June - September
+                : A Full-Time cashier at Best Fresh Mart Gravit8, Klang, Selangor.</p>
+                <p>October - March 2024
+                : Began my study journey as a pre-diploma students at UiTM Jengka, Pahang.</p>
+            </div>
+        </div>
+
+        <div class="experience right">
+            <div class="content">
+                <h3>2024 - 2026</h3>
+                <p>April 2024 - July 2026
+                : Continuing my study in Diploma in Information Management for 5 semester (2y6m) at UiTM Rembau, Negeri Sembilan.</p>
+                <p>August 2024 - October 2024
+                : A Full-Time cashier at 99Speedmart Kg Pendamar, Klang, Selangor.</p>
+            </div>
+        </div>
+
+        <div class="experience left">
+            <div class="content">
+                <h3>2026</h3>
+                <p>February - April
+                : Doing my Internship in Teknologi Maklumat department at Majlis Diraja Bandaraya Klang, Selangor for 8 weeks.</p>
+            </div>
+        </div>
+
+        <div class="experience right">
+            <div class="content">
+                <h3>Future Goal</h3>
+                <p>-To be able live in a life where im not worried about my education, money and social life.</p>
+                <p>-To be able making my parents proud of my archievement in life</p>
+                <p>-To have a house that i can call home.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="index.html" class="back-btn">← Back to Home</a>
+
+</div>
+
+</body>
+</html>

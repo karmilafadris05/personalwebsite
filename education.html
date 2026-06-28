@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Education - My Personal Website</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Georgia", serif;
+            background-color: #c7d6c2;
+            color: #3d3d3d;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+        
+        .bubble {
+            background: #ffffff;
+            padding: 15px 18px;
+            border-radius: 18px;
+            margin: 20px 0;
+            width: fit-content;
+            max-width: 85%;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .bubble:hover {
+            transform: translateY(-3px);
+        }
+
+        .year {
+            font-size: 12px;
+            color: #8b7d6b;
+            margin-bottom: 5px;
+        }
+
+        
+        .photos {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s ease;
+            margin-top: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .photos img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+        }
+
+        .bubble.active .photos {
+            max-height: 300px;
+            opacity: 1;
+            transform: translateY(0);
+            margin-top: 12px;
+        }
+
+        
+        .left {
+            margin-right: auto;
+        }
+
+        .right {
+            margin-left: auto;
+            background: #fffaf3;
+        }
+
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            text-decoration: none;
+            color: #4a4a4a;
+        }
+
+        .back-btn:hover {
+            letter-spacing: 1px;
+        }
+
+        
+        .sparkle {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            animation: firework 900ms ease-out forwards;
+        }
+
+        @keyframes firework {
+            0% {
+                transform: translate(0,0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--x), var(--y)) scale(0.3);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>My Education Journey</h1>
+
+    
+    <div class="bubble left" onclick="toggle(this)">
+        <div class="year">2018 - 2022</div>
+        High School 
+        <p>SMK (P) RAJA ZARINA, KLANG, SELANGOR.</p>
+
+        <div class="photos">
+            <img src="highschool.jpg">
+            <img src="highschool2.jpeg">
+            <img src="highschool3.jpg">
+        </div>
+    </div>
+
+    
+    <div class="bubble right" onclick="toggle(this)">
+        <div class="year">2023 - 2024</div>
+        Pre-Diploma 
+        <p>UiTM JENGKA, PAHANG.</p>
+
+        <div class="photos">
+            <img src="predip1.jpg">
+            <img src="predip2.jpg">
+            <img src="predip3.jpg">
+        </div>
+    </div>
+
+   
+    <div class="bubble left" onclick="toggle(this)">
+        <div class="year">2024 - Present</div>
+        Diploma 
+        <p>UiTM REMBAU, NEGERI SEMBILAN.</p>
+
+        <div class="photos">
+            <img src="dip1.jpg">
+            <img src="dip2.jpg">
+            <img src="dip3.jpeg">
+        </div>
+    </div>
+
+    <a href="index.html" class="back-btn">← Back to Home</a>
+
+    
+
+</div>
+
+<script>
+    function toggle(el) {
+        el.classList.toggle("active");
+    }
+
+
+    document.addEventListener("click", function(e) {
+
+        const colors = ["#ffffff", "#dff3e3", "#c7d6c2", "#f5f0e6"];
+
+        for (let i = 0; i < 18; i++) {
+
+            let sparkle = document.createElement("div");
+            sparkle.classList.add("sparkle");
+
+            document.body.appendChild(sparkle);
+
+            let angle = Math.random() * 2 * Math.PI;
+            let distance = Math.random() * 140 + 50;
+
+            let x = Math.cos(angle) * distance;
+            let y = Math.sin(angle) * distance;
+
+            sparkle.style.left = e.clientX + "px";
+            sparkle.style.top = e.clientY + "px";
+
+            sparkle.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+            sparkle.style.setProperty("--x", x + "px");
+            sparkle.style.setProperty("--y", y + "px");
+
+            sparkle.style.boxShadow = "0 0 12px rgba(255,255,255,0.9)";
+
+            setTimeout(() => {
+                sparkle.remove();
+            }, 900);
+        }
+    });
+</script>
+
+</body>
+</html>
